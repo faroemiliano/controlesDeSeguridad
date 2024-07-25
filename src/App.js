@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/Header.jsx";
+import Aside from "./components/Aside.jsx";
+import Footer from "./components/Footer.jsx";
+import Content from "./components/Content.jsx";
+import { useLocation } from "react-router-dom";
 
-function App() {
+export default function App() {
+  const location = useLocation(); //useLocation muestra ubicacion de donde estas podiendo manipularla
+  console.log(location.pathname);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Aside />
+      <Content nombre={location.pathname} />
+      <Footer />
     </div>
   );
 }
-
-export default App;
