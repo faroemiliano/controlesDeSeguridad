@@ -6,6 +6,7 @@ export default function ExtintoresUnidad() {
       <div className="container mt-4">
         <div class="col-12 text-center">
           <h2>Registro de Extintores</h2>
+          <p>"Extintores Unidad"</p>
         </div>
 
         <div class="container d-flex justify-content-center align-items-center full-height text-center mt-4 ">
