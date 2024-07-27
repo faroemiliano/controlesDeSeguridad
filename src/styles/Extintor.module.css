@@ -1,0 +1,57 @@
+.container {
+  background-image: url("../images/extintor.png"); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Ajustar el tamaño de la imagen de fondo */
+  background-position: center; /* Centrar la imagen de fondo */
+  background-repeat: no-repeat; /* No repetir la imagen de fondo */
+  padding-top: 1%;
+  min-height: 100vh; /* Asegurarse de que el fondo cubra toda la vista */
+}
+
+.customContainer {
+  background-color: rgba(
+    249,
+    249,
+    249,
+    0.5
+  ); /* Fondo blanco semi-transparente */
+  padding: 20px;
+  border-radius: 10px;
+}
+.customContainer:hover {
+  background-color: rgba(
+    245,
+    237,
+    237,
+    0.9
+  ); /* Hacer más oscuro al pasar el mouse */
+}
+
+.containermtc {
+  background-image: url("../images/extintor2.avif"); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Ajustar el tamaño de la imagen de fondo */
+  background-position: center; /* Centrar la imagen de fondo */
+  background-repeat: no-repeat; /* No repetir la imagen de fondo */
+  padding-top: 1%;
+  min-height: 100vh; /* Asegurarse de que el fondo cubra toda la vista */
+}
+
+.customContainermtc {
+  background-color: rgba(
+    249,
+    249,
+    249,
+    0.5
+  ); /* Fondo blanco semi-transparente */
+  padding: 1%;
+  border-radius: 30px;
+  max-width: 60%;
+  margin-right: 35%;
+}
+.customContainermtc:hover {
+  background-color: rgba(
+    245,
+    237,
+    237,
+    0.9
+  ); /* Hacer más oscuro al pasar el mouse */
+}
