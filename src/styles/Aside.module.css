@@ -1,0 +1,18 @@
+.asideNavbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px; /* Full height */
+  width: 250px; /* Sidebar width */
+  background-color: #343a40; /* Dark background */
+  color: white;
+
+  overflow-y: auto;
+}
+.infoLink {
+  font-size: 12px; /* Ajusta este valor según sea necesario */
+  line-height: 1.2; /* Ajusta la altura de línea para que el texto no se vea muy separado */
+  padding: 5px; /* Ajusta el padding para más control sobre el espacio */
+  text-align: center; /* Centrar el texto */
+  display: block; /* Asegurarse de que el enlace sea un bloque */
+}

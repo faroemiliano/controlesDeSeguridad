@@ -13,7 +13,7 @@ export default function App() {
     <div>
       <Header />
       <Aside />
-      <Content nombre={location.pathname} />
+      <Content />
       <Footer />
     </div>
   );

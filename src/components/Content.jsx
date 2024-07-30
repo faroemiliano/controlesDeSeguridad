@@ -5,7 +5,8 @@ import LucesDeEmergencia from "./LucesEmergencia";
 import ExtintoresDeAlmacen from "./ExtintoresAlmacen";
 import ExtintoresMtc from "./ExtintoresMtc";
 import EspejosConvexos from "./EspejosConvexos";
-import TablerosElectricos from "./TablerosElectricos";
+import TablerosIngreso from "./TablerosIngreso";
+import TablerosSotano from "./TablerosSotano";
 
 export default function Content(props) {
   return (
@@ -15,7 +16,8 @@ export default function Content(props) {
       <Route path="/extintores/almacen" element={<ExtintoresDeAlmacen />} />
       <Route path="/extintores/mtc" element={<ExtintoresMtc />} />
       <Route path="/espejosConvexos" element={<EspejosConvexos />} />
-      <Route path="/tablerosElectricos" element={<TablerosElectricos />} />
+      <Route path="/tablero/ingreso" element={<TablerosIngreso />} />
+      <Route path="/tablero/sotano" element={<TablerosSotano />} />
     </Routes>
     // <div className="content-wrapper">
     //   <h1>{props.nombre}</h1>

@@ -4,7 +4,8 @@
   background-position: center; /* Centrar la imagen de fondo */
   background-repeat: no-repeat; /* No repetir la imagen de fondo */
   padding-top: 1%;
-  min-height: 100vh; /* Asegurarse de que el fondo cubra toda la vista */
+  height: 90vh; /* Asegurarse de que el fondo cubra toda la vista */
+  overflow-y: auto;
 }
 
 .customContainer {
@@ -19,9 +20,9 @@
 }
 .customContainer:hover {
   background-color: rgba(
-    245,
-    237,
-    237,
+    45,
+    43,
+    43,
     0.9
   ); /* Hacer más oscuro al pasar el mouse */
 }
@@ -32,26 +33,23 @@
   background-position: center; /* Centrar la imagen de fondo */
   background-repeat: no-repeat; /* No repetir la imagen de fondo */
   padding-top: 1%;
-  min-height: 100vh; /* Asegurarse de que el fondo cubra toda la vista */
+  height: 90vh; /* Asegurarse de que el fondo cubra toda la vista */
+  overflow-y: auto;
 }
 
 .customContainermtc {
-  background-color: rgba(
-    249,
-    249,
-    249,
-    0.5
-  ); /* Fondo blanco semi-transparente */
+  background-color: rgba(71, 70, 70, 0.5);
   padding: 1%;
   border-radius: 30px;
   max-width: 60%;
   margin-right: 35%;
+  color: beige;
 }
 .customContainermtc:hover {
   background-color: rgba(
-    245,
-    237,
-    237,
+    95,
+    95,
+    95,
     0.9
   ); /* Hacer más oscuro al pasar el mouse */
 }

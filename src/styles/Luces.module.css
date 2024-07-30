@@ -4,39 +4,39 @@
   background-position: center; /* Centrar la imagen de fondo */
   background-repeat: no-repeat; /* No repetir la imagen de fondo */
   padding-top: 50px;
-  min-height: 100vh; /* Asegurarse de que el fondo cubra toda la vista */
+  height: 90vh; /* Asegurarse de que el fondo cubra toda la vista */
+  overflow-y: auto;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.customContainer {
+.customContainerInfo {
   background-color: rgba(
     255,
     255,
     255,
-    0.9
+    0.8
   ); /* Fondo blanco semi-transparente */
-  padding: 20px;
-  border-radius: 10px;
+  padding: 20px; /* Padding para el contenedor */
+  border-radius: 20px; /* Bordes redondeados del contenedor */
+
+  width: 39%; /* Limitar el ancho máximo del contenedor */
+  height: 65vh;
+  margin: auto; /* Centrar el contenedor horizontalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.customContainer:hover {
+
+.customContainerInfo:hover {
   background-color: rgba(
-    162,
-    180,
-    160,
-    0.9
+    255,
+    255,
+    255,
+    1.7
   ); /* Hacer más oscuro al pasar el mouse */
-}
-
-.customHeading {
-  color: #000000; /* Color azul */
-  font-weight: bold;
-}
-
-.customSelect {
-  width: 100%;
-  margin: auto;
-}
-
-.customSwitchLabel {
-  width: 100%;
-  text-align: left;
 }

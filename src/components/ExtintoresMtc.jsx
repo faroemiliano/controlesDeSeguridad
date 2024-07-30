@@ -1,65 +1,74 @@
 import React from "react";
 import styles from "../styles/Extintor.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function ExtintoresMtc() {
   return (
     <div className="content-wrapper">
       <div className={styles.containermtc}>
-        <div className={`container  ${styles.customContainermtc}`}>
-          <div class="col-12 text-center">
+        <div className={` ${styles.customContainermtc}`}>
+          <div className="col-12 text-center">
             <h2>Registro de Extintores</h2>
             <p>"Extintores MTC"</p>
           </div>
 
-          <div class="container d-flex justify-content-center align-items-center full-height text-center mt-4 ">
-            <div class="row g-3 align-items-start">
-              <div class="col-12 col-md-4">
-                <label class="form-label">Numero Extintor</label>
+          <div className="container d-flex justify-content-center align-items-center full-height text-center mt-4 ">
+            <div className="row g-3 align-items-start">
+              <div className="col-12 col-md-4">
+                <label className="form-label">Numero Extintor</label>
                 <input type="number" class="form-control" />
               </div>
-              <div class="col-12 col-md-4">
+              <div className="col-12 col-md-4">
                 <label class="form-label">Serie</label>
                 <input type="text" class="form-control" />
               </div>
-              <div class="col-12 col-md-4">
-                <label class="form-label">Numero Placa</label>
+              <div className="col-12 col-md-4">
+                <label className="form-label">Numero Placa</label>
                 <input type="number" class="form-control" />
               </div>
             </div>
           </div>
-          <div class="container d-flex justify-content-center align-items-center full-height text-center mt-4 ">
-            <div class="col-md-3">
-              <label class="form-label">Recarga</label>
-              <input class="form-control" type="date" id="fechaRecarga" />
+          <div className="container d-flex justify-content-center align-items-center full-height text-center mt-4 ">
+            <div className="col-md-3">
+              <label className="form-label">Recarga</label>
+              <input className="form-control" type="date" id="fechaRecarga" />
             </div>
             <div class="col-md-3">
-              <label class="form-label">Vencimiento</label>
-              <input class="form-control" type="date" id="fechaVencimiento" />
+              <label className="form-label">Vencimiento</label>
+              <input
+                className="form-control"
+                type="date"
+                id="fechaVencimiento"
+              />
             </div>
             <div class="col-md-3">
-              <label class="form-label ">Cambio de Extintor</label>
-              <input class="form-control" type="date" id="cambioExtintor " />
+              <label className="form-label ">Cambio de Extintor</label>
+              <input
+                className="form-control"
+                type="date"
+                id="cambioExtintor "
+              />
             </div>
           </div>
-          <div class="row g-3 mt-5 ">
-            <div class="col-md-5">
-              <div class="input-group mb-3">
-                <label class="input-group-text" for="tipos">
+          <div className="row g-3 mt-5 ">
+            <div className="col-md-5">
+              <div className="input-group mb-3">
+                <label className="input-group-text" for="tipos">
                   Tipo de Extintor
                 </label>
-                <select class="form-select" id="tipos">
+                <select className="form-select" id="tipos">
                   <option selected>Tipos</option>
                   <option value="1">PQS</option>
                   <option value="2">CO2</option>
                 </select>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="input-group mb-3">
-                <label class="input-group-text" for="capacidadExtintor">
+            <div className="col-md-6">
+              <div className="input-group mb-3">
+                <label className="input-group-text" for="capacidadExtintor">
                   Capacidad del Extintor
                 </label>
-                <select class="form-select" id="capacidadExtintor">
+                <select className="form-select" id="capacidadExtintor">
                   <option selected>Capacidad</option>
                   <option value="1">1 KL</option>
                   <option value="2">2 KL</option>
@@ -78,145 +87,65 @@ function ExtintoresMtc() {
             </div>
           </div>
 
-          <div class="mt-4 col-12 text-center">
-            <h3>INSPECCION GENERAL DEL EXTINTOR</h3>
+          <div className="mt-4 col-12 text-center">
+            <h3>INSPECCIÓN GENERAL DEL EXTINTOR</h3>
           </div>
 
-          <div class="row g-4 mt-4 justify-content-center">
-            <div class="col-12 col-md-3 text-center">
-              <label class="form-label">CILINDRO</label>
-              <div
-                class="btn-group d-flex"
-                role="group"
-                aria-label="Button group for cilindro"
-              >
-                <input
-                  type="radio"
-                  class="btn-check"
-                  name="cilindro"
-                  id="cilindro-bueno"
-                  autocomplete="off"
-                />
-                <label class="btn btn-outline-success" for="cilindro-bueno">
-                  BUENO
-                </label>
+          <div className="row g-4 mt-3 justify-content-center">
+            {["Cilindro", "Manómetro", "Manguera", "PIN DE SEGURIDAD"].map(
+              (item, idx) => (
+                <div key={idx} className="col-12 col-md-3 text-center">
+                  <label className="form-label">{item}</label>
+                  <div
+                    className="btn-group d-flex"
+                    role="group"
+                    aria-label={`Button group for ${item.toLowerCase()}`}
+                  >
+                    <input
+                      type="radio"
+                      className="btn-check"
+                      name={item.toLowerCase()}
+                      id={`${item.toLowerCase()}-bueno`}
+                      autoComplete="off"
+                    />
+                    <label
+                      className="btn btn-outline-success"
+                      htmlFor={`${item.toLowerCase()}-bueno`}
+                    >
+                      BUENO
+                    </label>
 
-                <input
-                  type="radio"
-                  class="btn-check"
-                  name="cilindro"
-                  id="cilindro-malo"
-                  autocomplete="off"
-                />
-                <label class="btn btn-outline-danger" for="cilindro-malo">
-                  MALO
-                </label>
-              </div>
-            </div>
-            <div class="col-12 col-md-3 text-center">
-              <label class="form-label">MANOMETRO</label>
-              <div
-                class="btn-group"
-                role="group"
-                aria-label="Button group with nested dropdown"
-              >
-                <input
-                  type="radio"
-                  class="btn-check"
-                  name="manometro"
-                  id="manometro-bueno"
-                  autocomplete="off"
-                />
-                <label class="btn btn-outline-success" for="manometro-bueno">
-                  BUENO
-                </label>
-
-                <input
-                  type="radio"
-                  class="btn-check"
-                  name="manometro"
-                  id="manometro-malo"
-                  autocomplete="off"
-                />
-                <label class="btn btn-outline-danger" for="manometro-malo">
-                  MALO
-                </label>
-              </div>
-            </div>
-            <div class="col-12 col-md-3 text-center">
-              <label class="form-label">MANGUERA</label>
-              <div
-                class="btn-group"
-                role="group"
-                aria-label="Button group with nested dropdown"
-              >
-                <input
-                  type="radio"
-                  class="btn-check"
-                  name="manguera"
-                  id="manguera-bueno"
-                  autocomplete="off"
-                />
-                <label class="btn btn-outline-success" for="manguera-bueno">
-                  BUENO
-                </label>
-
-                <input
-                  type="radio"
-                  class="btn-check"
-                  name="manguera"
-                  id="manguera-malo"
-                  autocomplete="off"
-                />
-                <label class="btn btn-outline-danger" for="manguera-malo">
-                  MALO
-                </label>
-              </div>
-            </div>
-            <div class="col-12 col-md-3 text-center">
-              <label class="form-label">PIN DE SEGURIDAD</label>
-              <div
-                class="btn-group"
-                role="group"
-                aria-label="Button group with nested dropdown"
-              >
-                <input
-                  type="radio"
-                  class="btn-check"
-                  name="pinseguridad"
-                  id="pin-bueno"
-                  autocomplete="off"
-                />
-                <label class="btn btn-outline-success" for="pin-bueno">
-                  BUENO
-                </label>
-
-                <input
-                  type="radio"
-                  class="btn-check"
-                  name="pinseguridad"
-                  id="pin-malo"
-                  autocomplete="off"
-                />
-                <label class="btn btn-outline-danger" for="pin-malo">
-                  MALO
-                </label>
-              </div>
-            </div>
-            <div class="input-group mt-4">
-              <span class="input-group-text">Observaciones</span>
+                    <input
+                      type="radio"
+                      className="btn-check"
+                      name={item.toLowerCase()}
+                      id={`${item.toLowerCase()}-malo`}
+                      autoComplete="off"
+                    />
+                    <label
+                      className="btn btn-outline-danger"
+                      htmlFor={`${item.toLowerCase()}-malo`}
+                    >
+                      MALO
+                    </label>
+                  </div>
+                </div>
+              )
+            )}
+            <div className="input-group mt-4">
+              <span className="input-group-text">Observaciones</span>
               <textarea
-                class="form-control"
+                className="form-control"
                 aria-label="With textarea"
               ></textarea>
             </div>
-            <div class="input-group input-group-sm mb-3 mt-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm">
+            <div className="input-group input-group-sm mb-3 mt-3">
+              <span className="input-group-text" id="inputGroup-sizing-sm">
                 Responsable de Recarga
               </span>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
               />
