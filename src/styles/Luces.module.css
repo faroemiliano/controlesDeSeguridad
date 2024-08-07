@@ -13,30 +13,7 @@
   justify-content: center;
 }
 
-.customContainerInfo {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Fondo blanco semi-transparente */
-  padding: 20px; /* Padding para el contenedor */
-  border-radius: 20px; /* Bordes redondeados del contenedor */
-
-  width: 39%; /* Limitar el ancho máximo del contenedor */
-  height: 65vh;
-  margin: auto; /* Centrar el contenedor horizontalmente */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.customContainerInfo:hover {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    1.7
-  ); /* Hacer más oscuro al pasar el mouse */
+.scrollTable {
+  overflow-y: auto;
+  width: 190px;
 }
