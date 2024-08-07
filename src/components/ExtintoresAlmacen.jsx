@@ -80,13 +80,13 @@ function ExtintoresAlmacen() {
       <div className={styles.containermtc}>
         <div className={styles.customContainermtc}>
           <div className="col-12 text-center">
-            <h2>Registro de Extintores</h2>
-            <h3>MARTINEZ & CHIHUANTITO SAC.</h3>
-            <p>"Extintores ALMACEN"</p>
+            <h2>"MARTINEZ & CHIHUANTITO SAC."</h2>
+            <h4>Registro e inspeccion de Extintores "Almacen"</h4>
+
             <div className="row mb-4">
               <div className="col-12 text-center">
                 <p>FORMATO: GSE-FO-020</p>
-                <p>INSPECCION DE EXTINTORES</p>
+
                 <p>FECHA EDICION: 9/1/2020</p>
               </div>
             </div>
@@ -188,7 +188,7 @@ function ExtintoresAlmacen() {
                   </select>
                 </div>
               </div>
-              <div className="col-md-5">
+              <div className="col-md-6">
                 <div className="input-group mb-3">
                   <label
                     className="input-group-text"
@@ -219,12 +219,9 @@ function ExtintoresAlmacen() {
                   </select>
                 </div>
               </div>
-              <div className="col-md-5">
-                <div className="input-group mb-3">
-                  <label
-                    className="input-group-text"
-                    htmlFor="capacidadExtintor"
-                  >
+              <div className="col-md-8">
+                <div className="input-group mb-5">
+                  <label className="input-group-text" htmlFor="empresaRecarga">
                     Empresa de Recarga
                   </label>
                   <input
