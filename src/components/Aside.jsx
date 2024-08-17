@@ -125,6 +125,42 @@ export default function Aside() {
                 </li>
               </ul>
             </li>
+            <li className="nav-item">
+              <a href="#" className="nav-link">
+                <i className="nav-icon fas fa-bolt"></i>
+
+                <p>
+                  Reportes
+                  <i className="right fas fa-angle-left" />
+                </p>
+              </a>
+              <ul className="nav nav-treeview">
+                <li className="nav-item">
+                  <Link to="/reporter/extintores" className="nav-link">
+                    <i className="fas fa-tachometer-alt me-2" />
+                    <p className="mb-0">Extintores</p>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/reporter/luces" className="nav-link">
+                    <i className="fas fa-tachometer-alt me-2" />
+                    <p className="mb-0">Luces Emergencias</p>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/reporter/tableros" className="nav-link">
+                    <i className="fas fa-tachometer-alt me-2" />
+                    <p className="mb-0">Tableros Electricos</p>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/reporter/espejos" className="nav-link">
+                    <i className="fas fa-tachometer-alt me-2" />
+                    <p className="mb-0">Espejos</p>
+                  </Link>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
         {/* /.sidebar-menu */}

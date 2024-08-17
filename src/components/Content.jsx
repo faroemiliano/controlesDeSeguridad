@@ -7,8 +7,11 @@ import ExtintoresMtc from "./ExtintoresMtc";
 import EspejosConvexos from "./EspejosConvexos";
 import TablerosIngreso from "./TablerosIngreso";
 import TablerosSotano from "./TablerosSotano";
-
-export default function Content(props) {
+import ReporterExtintores from "./ReporterExtintor";
+import ReporterLuces from "./ReporterLuces";
+import ReporterTableros from "./ReporterTableros";
+import ReporterEspejos from "./ReporterEspejos";
+export default function Content() {
   return (
     <Routes>
       <Route path="/lucesEmergencia" element={<LucesDeEmergencia />} />
@@ -18,9 +21,10 @@ export default function Content(props) {
       <Route path="/espejosConvexos" element={<EspejosConvexos />} />
       <Route path="/tablero/ingreso" element={<TablerosIngreso />} />
       <Route path="/tablero/sotano" element={<TablerosSotano />} />
+      <Route path="/reporter/extintores" element={<ReporterExtintores />} />
+      <Route path="/reporter/luces" element={<ReporterLuces />} />
+      <Route path="/reporter/tableros" element={<ReporterTableros />} />
+      <Route path="/reporter/espejos" element={<ReporterEspejos />} />
     </Routes>
-    // <div className="content-wrapper">
-    //   <h1>{props.nombre}</h1>
-    // </div>
   );
 }

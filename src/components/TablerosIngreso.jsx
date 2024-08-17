@@ -4,10 +4,12 @@ import axios from "axios";
 
 function TablerosIngreso() {
   const [ubicacion, setUbicacion] = useState("");
+
   const [date, setDate] = useState("");
   const [responsableInspeccion, setResponsableInspeccion] = useState("");
   const [responsable, setResponsable] = useState("");
   const [fechaEdicion, setFechaEdicion] = useState("");
+  const [area] = useState("Ingreso");
   const [inspecciones, setInspecciones] = useState({
     estructura: false,
     estructuraComentarios: "",
@@ -75,14 +77,6 @@ function TablerosIngreso() {
       inspeccion: "conexionado",
       comentario: "conexionadoComenatrio",
     },
-
-    // "2. Cuenta con puerta frontal, chapa, interruptor de seguridad y puesta a tierra.",
-    // "3. Cuenta con los tomacorrientes industriales en buen estado.",
-    // "4. Se encuentra señalizada de manera correcta.",
-    // "5. Cuenta con interruptor o seccionador general.",
-    // "6. Cuenta con interruptores bipolares o tripolares, según el caso.",
-    // "7. Cuenta con cables dimensionados según la carga.",
-    // "8. El conexionado cuenta con terminales adecuados.",
   ];
 
   const changeInspeccion = (inspeccion, value) => {
@@ -101,6 +95,7 @@ function TablerosIngreso() {
     const data = {
       ubicacion,
       date,
+      area,
       responsableInspeccion,
       responsable,
       fechaEdicion,
@@ -241,7 +236,7 @@ function TablerosIngreso() {
                         <input
                           type="text"
                           className="form-control"
-                          value={inspecciones[descripcion.comentario]}
+                          value={inspecciones[descripcion.comentario] || ""}
                           onChange={(e) =>
                             changeInspeccion(
                               descripcion.comentario,

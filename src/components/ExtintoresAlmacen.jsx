@@ -7,8 +7,10 @@ function ExtintoresAlmacen() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [usuarios, setUsuarios] = useState([]);
+
   const [formData, setFormData] = useState({
     numeroExtintor: "",
+    area: "Almacen",
     serie: "",
     numeroPlaca: "",
     dateRecarga: "",

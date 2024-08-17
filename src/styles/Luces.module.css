@@ -1,19 +1,18 @@
-.contentWrapper {
-  background-image: url("../images/luzemergencia.jpg"); /* Ruta de la imagen de fondo */
+.container {
+  background-color: aqua;
   background-size: cover; /* Ajustar el tamaño de la imagen de fondo */
   background-position: center; /* Centrar la imagen de fondo */
   background-repeat: no-repeat; /* No repetir la imagen de fondo */
-  padding-top: 50px;
+
   height: 90vh; /* Asegurarse de que el fondo cubra toda la vista */
   overflow-y: auto;
-  width: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 
-.scrollTable {
-  overflow-y: auto;
-  width: 190px;
+.customContainer {
+  background-color: rgba(71, 70, 70, 0.5);
+  padding: 1%;
+  border-radius: 30px;
+  max-width: 60%;
+  margin-right: 35%;
+  color: beige;
 }

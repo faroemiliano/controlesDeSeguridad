@@ -1,40 +1,50 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/Espejos.module.css";
+import axios from "axios";
 
 const EspejosConvexos = () => {
-  const [data, setData] = useState({
-    codigo: 0,
-    fecha: "",
+  const [codigo, setCodigo] = useState("");
+  const [domicilio, setDomicilio] = useState("");
+  const [edicion, setEdicion] = useState("");
+  const [fechaEdicion, setFechaEdicion] = useState("");
+  const [razonSocial, setRazonSocial] = useState("");
+  const [ruc, setRuc] = useState("");
+  const [estado, setEstado] = useState("");
+  const [formData, setFormData] = useState({
     inspecciones: [
       {
         ubicacion: "",
-        cantidad: 0,
+        cantidad: "",
         bueno: false,
         malo: false,
         falta: false,
         observaciones: "",
       },
     ],
-    nombre: "",
-    cargo: "",
-    empresa: "",
   });
-
   const handleChange = (index, field, value) => {
-    const newInspecciones = [...data.inspecciones];
-    newInspecciones[index][field] = value;
-    setData({ ...data, inspecciones: newInspecciones });
+    setFormData((prevState) => {
+      const updatedInspecciones = [...prevState.inspecciones];
+      updatedInspecciones[index] = {
+        ...updatedInspecciones[index],
+        [field]: value,
+      };
+      return {
+        ...prevState,
+        inspecciones: updatedInspecciones,
+      };
+    });
   };
 
   const handleAddRow = () => {
-    setData({
-      ...data,
+    setFormData({
+      ...formData,
       inspecciones: [
-        ...data.inspecciones,
+        ...formData.inspecciones,
         {
           ubicacion: "",
-          cantidad: 0,
+          cantidad: "",
           bueno: false,
           malo: false,
           falta: false,
@@ -45,13 +55,34 @@ const EspejosConvexos = () => {
   };
 
   const handleDeleteRow = (index) => {
-    const newInspecciones = data.inspecciones.filter((_, i) => i !== index);
-    setData({ ...data, inspecciones: newInspecciones });
+    const newInspecciones = formData.inspecciones.filter((_, i) => i !== index);
+    setFormData({ ...formData, inspecciones: newInspecciones });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const data = {
+      codigo,
+      domicilio,
+      edicion,
+      fechaEdicion,
+      razonSocial,
+      ruc,
+      estado,
+      ...formData,
+    };
     console.log(data);
+
+    try {
+      const response = await axios.post(
+        "https://controlesdeseguridad-production.up.railway.app/api/espejos",
+        data
+      );
+      console.log("Formulario enviado exitosamente:", response.data);
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+    }
   };
 
   return (
@@ -67,7 +98,8 @@ const EspejosConvexos = () => {
               <input
                 type="text"
                 className="form-control"
-                onChange={(e) => setData({ ...data, codigo: e.target.value })}
+                value={codigo}
+                onChange={(e) => setCodigo(e.target.value)}
               />
             </div>
           </div>
@@ -85,7 +117,14 @@ const EspejosConvexos = () => {
                   <input type="date" className="form-control w-100" />
                 </td>
                 <td>N° EDICIÓN</td>
-                <td>2</td>
+                <td>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={edicion}
+                    onChange={(e) => setEdicion(e.target.value)}
+                  />
+                </td>
               </tr>
               <tr>
                 <td>RAZON SOCIAL</td>
@@ -93,7 +132,14 @@ const EspejosConvexos = () => {
               </tr>
               <tr>
                 <td>RUC</td>
-                <td colSpan="5">20424580237</td>
+                <td>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={ruc}
+                    onChange={(e) => setRuc(e.target.value)}
+                  />
+                </td>
               </tr>
               <tr>
                 <td>DOMICILIO</td>
@@ -101,8 +147,8 @@ const EspejosConvexos = () => {
                   <input
                     type="text"
                     name=""
-                    id=""
-                    className="form-control w-100"
+                    value={domicilio}
+                    onChange={(e) => setDomicilio(e.target.value)}
                   />
                 </td>
               </tr>
@@ -114,10 +160,8 @@ const EspejosConvexos = () => {
                   <input
                     type="date"
                     className="form-control"
-                    value={data.fecha}
-                    onChange={(e) =>
-                      setData({ ...data, fecha: e.target.value })
-                    }
+                    value={fechaEdicion}
+                    onChange={(e) => setFechaEdicion(e.target.value)}
                   />
                 </td>
               </tr>
@@ -147,7 +191,7 @@ const EspejosConvexos = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.inspecciones.map((inspeccion, index) => (
+                  {formData.inspecciones.map((inspeccion, index) => (
                     <tr key={index}>
                       <td>
                         <input
@@ -174,7 +218,8 @@ const EspejosConvexos = () => {
                       <td>
                         <input
                           type="checkbox"
-                          checked={inspeccion.bueno}
+                          checked={inspeccion.estado}
+                          value="bueno"
                           onChange={(e) =>
                             handleChange(index, "bueno", e.target.checked)
                           }
@@ -183,16 +228,16 @@ const EspejosConvexos = () => {
                       <td>
                         <input
                           type="checkbox"
-                          checked={inspeccion.malo}
-                          onChange={(e) =>
-                            handleChange(index, "malo", e.target.checked)
-                          }
+                          checked={inspeccion.estado}
+                          value="malo"
+                          onChange={(e) => setEstado(e.target.value)}
                         />
                       </td>
                       <td>
                         <input
                           type="checkbox"
-                          checked={inspeccion.falta}
+                          checked={inspeccion.estado}
+                          value="falta"
                           onChange={(e) =>
                             handleChange(index, "falta", e.target.checked)
                           }
@@ -239,8 +284,10 @@ const EspejosConvexos = () => {
                 <input
                   type="text"
                   className="form-control"
-                  value={data.nombre}
-                  onChange={(e) => setData({ ...data, nombre: e.target.value })}
+                  value={formData.nombre || ""}
+                  onChange={(e) =>
+                    setFormData({ ...formData, nombre: e.target.value })
+                  }
                 />
               </p>
               <p>
@@ -248,8 +295,10 @@ const EspejosConvexos = () => {
                 <input
                   type="text"
                   className="form-control"
-                  value={data.cargo}
-                  onChange={(e) => setData({ ...data, cargo: e.target.value })}
+                  value={formData.cargo || ""}
+                  onChange={(e) =>
+                    setFormData({ ...formData, cargo: e.target.value })
+                  }
                 />
               </p>
               <p>
@@ -257,9 +306,9 @@ const EspejosConvexos = () => {
                 <input
                   type="text"
                   className="form-control"
-                  value={data.empresa}
+                  value={formData.empresa || ""}
                   onChange={(e) =>
-                    setData({ ...data, empresa: e.target.value })
+                    setFormData({ ...formData, empresa: e.target.value })
                   }
                 />
               </p>

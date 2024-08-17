@@ -3,12 +3,13 @@ import styles from "../styles/Extintor.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
-function ExtintoresAlmacen() {
+function ExtintoresUnidad() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [usuarios, setUsuarios] = useState([]);
   const [formData, setFormData] = useState({
     numeroExtintor: "",
+    area: "Unidad",
     serie: "",
     numeroPlaca: "",
     dateRecarga: "",
@@ -332,4 +333,4 @@ function ExtintoresAlmacen() {
   );
 }
 
-export default ExtintoresAlmacen;
+export default ExtintoresUnidad;

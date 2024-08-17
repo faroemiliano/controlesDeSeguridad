@@ -8,6 +8,7 @@ function TablerosIngreso() {
   const [responsableInspeccion, setResponsableInspeccion] = useState("");
   const [responsable, setResponsable] = useState("");
   const [fechaEdicion, setFechaEdicion] = useState("");
+  const [area] = useState("Sótano");
   const [inspecciones, setInspecciones] = useState({
     estructura: false,
     estructuraComentarios: "",
@@ -101,6 +102,7 @@ function TablerosIngreso() {
     const data = {
       ubicacion,
       date,
+      area,
       responsableInspeccion,
       responsable,
       fechaEdicion,
@@ -200,7 +202,7 @@ function TablerosIngreso() {
                 />
               </div>
             </div>
-            <h4 className="mt-4">TABLERO N° 02 SOTANO</h4>
+            <h4 className="mt-4">TABLERO N° 02 SOTANO </h4>
             <div className="table-responsive">
               <table className="table table-bordered">
                 <thead>
