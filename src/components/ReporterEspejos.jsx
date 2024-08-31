@@ -72,54 +72,17 @@ export default function ReporterEspejos() {
         <table className="table table-bordered">
           <thead>
             <tr>
-              <th>Descripción</th>
-              <th>Estado (Marcar con "X")</th>
+              <th>Ubicacion</th>
+              <th>Estado</th>
               <th>Observaciones</th>
             </tr>
           </thead>
           <tbody>
             {reportesEspejos.map((reporte, index) => (
               <tr>
-                <td>Ubicación</td>
-                <td>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="bueno"
-                    />
-                    <label className="form-check-label" htmlFor="bueno">
-                      Bueno
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="malo"
-                    />
-                    <label className="form-check-label" htmlFor="malo">
-                      Malo
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="falta"
-                    />
-                    <label className="form-check-label" htmlFor="falta">
-                      Falta
-                    </label>
-                  </div>
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Ingrese observaciones"
-                  />
-                </td>
+                <td>{reporte.ubicacion}</td>
+                <td></td>
+                <td></td>
               </tr>
             ))}
 

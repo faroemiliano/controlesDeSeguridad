@@ -7,6 +7,10 @@ function ReporterTableros() {
 
   const descripciones = [
     {
+      texto: "Area",
+      inspeccion: "area",
+    },
+    {
       texto:
         "1. La estructura se encuentra en buenas condiciones y son las adecuadas para el lugar.",
       inspeccion: "estructura",
@@ -98,11 +102,21 @@ function ReporterTableros() {
                 <React.Fragment key={index}>
                   <tr>
                     <td>Valor</td>
-                    {descripciones.map((desc, i) => (
-                      <td key={`${i}-valor`}>
-                        {reporter[desc.inspeccion] ? "Sí" : "No"}
-                      </td>
-                    ))}
+                    {descripciones.map((desc, i) => {
+                      if (desc.inspeccion === "area") {
+                        return (
+                          <td key={`${i}-valor`}>
+                            {reporter[desc.inspeccion]}
+                          </td>
+                        );
+                      } else {
+                        return (
+                          <td key={`${i}-valor`}>
+                            {reporter[desc.inspeccion] ? "Sí" : "-"}
+                          </td>
+                        );
+                      }
+                    })}
                   </tr>
                   <tr>
                     <td>Observación</td>

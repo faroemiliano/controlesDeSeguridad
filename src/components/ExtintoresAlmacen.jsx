@@ -10,7 +10,7 @@ function ExtintoresAlmacen() {
 
   const [formData, setFormData] = useState({
     numeroExtintor: "",
-    area: "Almacen",
+    // area: "Almacen",
     serie: "",
     numeroPlaca: "",
     dateRecarga: "",

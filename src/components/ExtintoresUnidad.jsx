@@ -82,7 +82,7 @@ function ExtintoresUnidad() {
         <div className={styles.customContainermtc}>
           <div className="col-12 text-center">
             <h2>"MARTINEZ & CHIHUANTITO SAC."</h2>
-            <h4>Registro e inspeccion de Extintores "Unidad"</h4>
+            <h4>Registro e inspeccion de Extintores "Unidddad"</h4>
 
             <div className="row mb-4">
               <div className="col-12 text-center">

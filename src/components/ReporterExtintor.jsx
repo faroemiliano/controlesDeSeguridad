@@ -27,6 +27,7 @@ function ReporterExtintores() {
           <table className="table table-bordered table-striped">
             <thead>
               <tr>
+                <th>AREA</th>
                 <th>Serie</th>
 
                 <th>Fecha Recarga</th>
@@ -45,6 +46,7 @@ function ReporterExtintores() {
             <tbody>
               {reportesExtintor.map((reporte, index) => (
                 <tr key={index}>
+                  <td>{reporte.area}</td>
                   <td>{reporte.serie}</td>
 
                   <td>{reporte.dateRecarga}</td>
